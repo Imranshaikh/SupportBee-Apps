@@ -1,5 +1,18 @@
-<label for = "number"> Mobile No: </label>
-<input name="number" type="text"/>
-
-<label for = "message"> Message: </label>
-<textarea name="message"></textarea>
+<h3>Edit the Story Details</h3>
+{{#each tickets}}
+  {{#ticket}}
+    <ol>
+      <li>
+        <label for="title">Story Title</label>
+        <input name="title" value="{{subject}}">
+      </li>
+      <li>
+        <label for="description">Story Description</label>
+        <textarea name="description">
+{{content.text}} \n
+https://{{../../company.subdomain}}.supportbee.com/tickets/{{id}}
+        </textarea>
+      </li>
+    </ol>
+  {{/ticket}}
+{{/each}}
